@@ -1,0 +1,219 @@
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+@font-face {
+  font-family: raleway-c;
+  src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+  font-family: outfit-c;
+  src: url(../fonts/outfit-regular.woff2);
+}
+:root {
+  --index: calc(1vw + 1vh);
+  --color-header: #f4efec;
+  --color-text: #cdc6c3;
+  --gallery-gap: calc(var(--index) * 4);
+}
+
+.hero,
+.main-header,
+.content,
+.gallery-left {
+  will-change: transform;
+}
+
+body {
+  background-image: url("../img/bg.jpg");
+  background-size: 50px;
+  color: var(--color-text);
+  font-family: raleway-c;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: outfit-c;
+}
+
+.hero {
+  position: absolute;
+  width: calc(var(--index) * 36);
+  left: 40vw;
+  top: 10vh;
+  z-index: -1;
+}
+
+.container {
+  padding: 0 7vw;
+}
+
+.header {
+  position: relative;
+}
+.header__title {
+  bottom: 12vh;
+  position: absolute;
+  width: min-content;
+  color: var(--color-header);
+  font-size: calc(var(--index) * 8);
+  line-height: 0.9;
+  font-weight: 700;
+}
+
+header {
+  min-height: 100vh;
+}
+
+.gallery {
+  display: flex;
+  padding: calc(var(--index) * 10) 0;
+}
+.gallery__item {
+  max-width: calc(var(--index) * 21);
+  margin-bottom: var(--gallery-gap);
+  max-height: 180vh;
+  border-radius: 8px;
+}
+.gallery__left {
+  margin-top: calc(var(--gallery-gap) * 1.75);
+}
+.gallery__right .gallery__item {
+  margin: 0;
+  margin-top: var(--gallery-gap);
+}
+
+.gallery > * {
+  gap: var(--gallery-gap);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text-block {
+  color: var(--color-text);
+  position: relative;
+  font-size: 2.5rem;
+}
+.text-block__text {
+  line-height: 1.4;
+  font-size: 0.5em;
+}
+.text-block__title {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: var(--color-header);
+  margin-bottom: 0.7em;
+}
